@@ -1,15 +1,24 @@
-# This is a sample Python script.
+# rps game introductory function
+def main():
+    # rps game introductory prompt
+    print("Welcome to EspinosaJV's Rock,Paper,Scissors Python application!")
+    print("Would you like to play a quick game of Rock Paper Scissors? (Y/N)")
+    userChoice = input().lower()
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    # rps game user choice input
+    if userChoice == 'y':
+        rockPaperScissors()
+    elif userChoice == 'n':
+        print("Alright, thanks for checking this out!")
+        exit()
+    else:
+        print("Please input appropriately.")
+        main()
 
+# rps game proper functionality
+def rockPaperScissors():
+    print("Welcome to Rock, Paper, Scissors!")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()
 
