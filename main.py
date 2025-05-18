@@ -33,6 +33,7 @@ def rockPaperScissors():
 
     # rps game functionality loop
     while (playerScore < 3) and (computerScore < 3):
+        # rps game user & computer input prompts
         print("Take your pick: Rock, paper, or scissors?")
         userChoice = input().lower()
         if userChoice not in rpsList:
@@ -42,6 +43,34 @@ def rockPaperScissors():
         finComputerChoice = rpsList[computerChoice]
         print("User Choice is: ", userChoice)
         print("Computer Choice is: ", finComputerChoice)
+
+        # handles draw scenarios
+        if userChoice == finComputerChoice:
+            print("You both draw!")
+            continue
+
+        # handles checking of both user and computer inputs
+        if rockPaperScissorsChecker(userChoice, finComputerChoice):
+            print("You won this fight!")
+            playerScore += 1
+        else:
+            print("You lost this fight!")
+            computerScore += 1
+
+# rps checker
+def rockPaperScissorsChecker(userChoice, finComputerChoice):
+    if (userChoice == "rock") and (finComputerChoice == "scissors"):
+        return True
+    elif (userChoice == "rock") and (finComputerChoice == "paper"):
+        return False
+    elif (userChoice == "paper") and (finComputerChoice == "rock"):
+        return True
+    elif (userChoice == "paper") and (finComputerChoice == "scissors"):
+        return False
+    elif (userChoice == "scissors") and (finComputerChoice == "rock"):
+        return False
+    else:
+        return True
 
 if __name__ == '__main__':
     main()
