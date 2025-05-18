@@ -57,6 +57,14 @@ def rockPaperScissors():
             print("You lost this fight!")
             computerScore += 1
 
+    # final congrats/nice try prompts
+    if playerScore == 3:
+        print("Congratulations, you have beaten the computer by being the first to 3!")
+        main()
+    elif computerScore == 3:
+        print("Nice try, but the computer has beaten you by being the first to 3!")
+        main()
+
 # rps checker
 def rockPaperScissorsChecker(userChoice, finComputerChoice):
     if (userChoice == "rock") and (finComputerChoice == "scissors"):
